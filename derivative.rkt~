@@ -117,7 +117,7 @@
       [`(* ,y (/ ,x)) (simplify `(/ ,(simplify `,y) ,(simplify `,x)))]
       [`(* (/ ,x) ,y) (simplify `(/ ,(simplify `,y) ,(simplify `,x)))]
       [`(/ ,y (/ ,x)) (simplify `(* ,(simplify `,x) ,(simplify `,y)))]
-      [`(/ (/ ,y) ,x) (simplify `(/ (* ,(simplify `,x) ,(simplify `,y))))]
+      [`(/ (/ ,y) ,x) (simplify `(/ (* ,(simplify `,x) `,(simplify ,y))))]
       [`(* (/ ,x) ,y) (simplify `(/ ,(simplify `,y) ,(simplify `,x)))]
       [x x])))
 
