@@ -4,40 +4,40 @@
 ;;     - ((* x x x) x)
 
 ; Dokumentation:
-; Wie kann ich nach X ableiten?
-; -> (ableiten '(x x)) -> 1
-; -> (ableiten '(1 x)) -> 0
-; -> (ableiten '(y x)) -> 0
+; Wie kann ich nach X derivative?
+; -> (derivative '(x x)) -> 1
+; -> (derivative '(1 x)) -> 0
+; -> (derivative '(y x)) -> 0
 ;
-; Wie kann ich eine Potenz von X ableiten?
-; -> (ableiten '((* x x) x))             -> '(+ x x)                          [= 2x]
-; -> (ableiten '((* (* x x) x) x))       -> '(+ (* (+ x x) x) (* x x))        [= 3x^2]
-; -> (ableiten '((exp (* 2 (log x))) x)) -> '(* (/ 2 x) (exp (* 2 (log x))))  [= 2x]
+; Wie kann ich eine Potenz von X derivative?
+; -> (derivative '((* x x) x))             -> '(+ x x)                          [= 2x]
+; -> (derivative '((* (* x x) x) x))       -> '(+ (* (+ x x) x) (* x x))        [= 3x^2]
+; -> (derivative '((exp (* 2 (log x))) x)) -> '(* (/ 2 x) (exp (* 2 (log x))))  [= 2x]
 ;
-; Wie kann ich eine Wurzel von X ableiten?
-; -> (ableiten '((exp (/ (log x) 2)) x)) -> '(* (/ (* 2 x)) (exp (/ (log x) 2)))  [= 1/2 * x^-1/2]
-; -> (ableiten '((exp (/ (log x) 3)) x)) -> '(* (/ (* 3 x)) (exp (/ (log x) 3)))  [= 1/3 * x^-1/3]
+; Wie kann ich eine Wurzel von X derivative?
+; -> (derivative '((exp (/ (log x) 2)) x)) -> '(* (/ (* 2 x)) (exp (/ (log x) 2)))  [= 1/2 * x^-1/2]
+; -> (derivative '((exp (/ (log x) 3)) x)) -> '(* (/ (* 3 x)) (exp (/ (log x) 3)))  [= 1/3 * x^-1/3]
 ;
 ; Funktioniert die Summenregel? Ja.
-; -> (ableiten '((+ x x) x) -> '(+ 1 1)
-; -> (ableiten '((- x x) x) -> 0
+; -> (derivative '((+ x x) x) -> '(+ 1 1)
+; -> (derivative '((- x x) x) -> 0
 ;
 ; Funktioniert die Produktregel? Ja.
-; -> (ableiten '((* x x) x)  -> '(+ x x)
-; -> (ableiten '((/ x x) x)) -> '(+ (/ x) (* x (- (/ (* x x))))) [= 0]
+; -> (derivative '((* x x) x)  -> '(+ x x)
+; -> (derivative '((/ x x) x)) -> '(+ (/ x) (* x (- (/ (* x x))))) [= 0]
 ;
-; Wie kann ich Exponentialfunktionen ableiten?
-; -> (ableiten '((exp x) x))             -> '(exp x)
-; -> (ableiten '((exp (* x (log 2))) x)) -> '(* (log 2) (exp (* x (log 2))))  [= log(2)* e^(x*log(2))]
+; Wie kann ich Exponentialfunktionen derivative?
+; -> (derivative '((exp x) x))             -> '(exp x)
+; -> (derivative '((exp (* x (log 2))) x)) -> '(* (log 2) (exp (* x (log 2))))  [= log(2)* e^(x*log(2))]
 ;
-; Wie kann ich Sinusfunktionen ableiten?
-; -> (ableiten '((sin x) x)) -> '(cos x)
+; Wie kann ich Sinusfunktionen derivative?
+; -> (derivative '((sin x) x)) -> '(cos x)
 ;
-; Wie kann ich Cosinusfunktionen ableiten?
-; -> (ableiten '((cos x) x)) -> '(- (sin x))
+; Wie kann ich Cosinusfunktionen derivative?
+; -> (derivative '((cos x) x)) -> '(- (sin x))
 ;
-; Wie kann ich Logarithmen ableiten?
-; -> (ableiten '((log x) x)) -> '(/ x)
+; Wie kann ich Logarithmen derivative?
+; -> (derivative '((log x) x)) -> '(/ x)
 
 
 (define differ
